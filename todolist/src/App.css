@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'MerriweatherSans';
+    src: local('MerriweatherSans'), url(./assents/font/MerriweatherSans-Medium.ttf) format('onpentype');
+}
+
+body {
+    background-color: #fffffe;
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    margin: 10px 20% 10px 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .navbar {
+    padding: 0.3em 0em;
+}
+
+.container .navbar h1 {
+    font-family: sans-serif;
+    color: #00214d;
+    text-align: center;
+}
+
+.container .main-content .add-item {
+    margin: 20px 10px 20px 10px;
+}
+
+.container .main-content .add-item input {
+    border: none;
+    margin-left: 20px;
+    font-size: 2em;
+    outline: none;
+}
+
+.container .main-content .add-item input:focus {
+    border-bottom: 2px solid #00214d;
+}
