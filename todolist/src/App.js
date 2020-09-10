@@ -45,6 +45,22 @@ class App extends Component {
     });
   }
 
+  checkItem(item){
+    return (event) => {
+      const index = this.state.TodoItem.indexOf(item);
+      this.setState({
+        TodoItem: [
+          ...this.state.TodoItem.slice(0, index),
+          {
+            ...item,
+            isComplete: !item.isComplete
+          },
+          ...this.state.TodoItem.slice(index + 1),
+        ]
+      })
+    }
+  }
+  
   render(){
     return (
       <div className="container">
@@ -58,7 +74,7 @@ class App extends Component {
           </div>
           <div className="todo">
           {
-            this.state.TodoItem.map((item, index) => <Todolist key={index} item={item}/>)
+            this.state.TodoItem.map((item, index) => <Todolist key={index} item={item} onClick={this.checkItem(item)} />)
           }
           </div>
         </div>

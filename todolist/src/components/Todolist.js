@@ -14,7 +14,7 @@ export default class Todolist extends Component {
         }
         return (
             <div className="TodoList">
-                <img alt="img" id="checkBox" width="38" height="38" src={urlImg}></img>
+                <img onClick={this.props.onClick} alt="img" id="checkBox" width="38" height="38" src={urlImg} ></img>
                 <p className={checkText}>{this.props.item.todo}</p>
                 <img alt="img" id="trashBin" src={trashBin} width="38" height="38"></img>
             </div>
