@@ -6,13 +6,45 @@ import addImg from './assents/img/add.svg';
 class App extends Component {
   constructor(){
     super();
-    this.state = [
-      {todo: "Learn JS", isComplete: false},
-      {todo: "Learn Html", isComplete: false},
-      {todo: "Learn Css", isComplete: false},
-      {todo: "Learn React", isComplete: false}
-    ]
+    this.state = {
+      newItem: '',
+      TodoItem: [
+        {todo: "Learn JS", isComplete: true},
+        {todo: "Learn Html", isComplete: true},
+        {todo: "Learn Css", isComplete: true},
+        {todo: "Learn ReactJS", isComplete: false}
+      ]
+    }
+    this.keyUp = this.keyUp.bind(this);
+    this.onInput = this.onInput.bind(this);
   }
+
+  keyUp(event){
+    if(event.keyCode === 13){
+      let text = event.target.value;
+      if(!text){
+        return;
+      }
+      text = text.trim();
+      if(!text){
+        return;
+      }
+      this.setState({
+        newItem: '',
+        TodoItem: [
+          ...this.state.TodoItem,
+          {todo: text, isComplete: false}
+        ]
+      });
+    }
+  }
+
+  onInput(event){
+    this.setState({
+      newItem: event.target.value
+    });
+  }
+
   render(){
     return (
       <div className="container">
@@ -21,12 +53,12 @@ class App extends Component {
         </div>
         <div className="main-content">
           <div className="add-item">
-            <img src={addImg} width="64" height="64"></img>
-            <input type="text" placeholder="Nhập............."></input>
+            <img alt="img" src={addImg} width="64" height="64"></img>
+            <input type="text" value={this.state.newItem} onChange={this.onInput} onKeyUp={this.keyUp} placeholder="Nhập............."></input>
           </div>
           <div className="todo">
           {
-            this.state.map(item => <Todolist item={item}/>)
+            this.state.TodoItem.map((item, index) => <Todolist key={index} item={item}/>)
           }
           </div>
         </div>

@@ -1,4 +1,21 @@
-.TodoItem {
+.TodoList {
     display: flex;
-    text-align: center;
+    align-items: center;
+}
+
+#checkBox {
+    margin-right: 20px;
+}
+
+#trashBin {
+    margin-left: 20px;
+}
+
+.TodoList p {
+    font-size: 24px;
+    flex-grow: 1;
+}
+
+.check {
+    text-decoration: line-through;
 }

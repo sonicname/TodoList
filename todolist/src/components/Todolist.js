@@ -7,15 +7,16 @@ import trashBin from '../assents/img/trash.svg';
 export default class Todolist extends Component {
     render() {
         let urlImg = unCheckImg;
-        if(this.props.item.isComplete == true){
+        let checkText = "complete";
+        if(this.props.item.isComplete === true){
             urlImg = checkImg;
+            checkText = "check";
         }
         return (
             <div className="TodoList">
-                <div className="TodoItem">
-                    <img width="40" height="40" src={urlImg}></img>
-                    <h3>{this.props.item.todo}</h3>
-                </div>
+                <img alt="img" id="checkBox" width="38" height="38" src={urlImg}></img>
+                <p className={checkText}>{this.props.item.todo}</p>
+                <img alt="img" id="trashBin" src={trashBin} width="38" height="38"></img>
             </div>
         )
     }

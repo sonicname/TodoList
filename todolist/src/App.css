@@ -1,42 +1,32 @@
-@font-face {
-    font-family: 'MerriweatherSans';
-    src: local('MerriweatherSans'), url(./assents/font/MerriweatherSans-Medium.ttf) format('onpentype');
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #55423d;
 }
 
-body {
-    background-color: #fffffe;
-    padding: 0;
+.navbar {
+    text-align: center;
+    font-size: 1.25em;
+    color: #271c19;
     margin: 0;
 }
 
 .main-content {
-    margin: 10px 20% 10px 20%;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.add-item {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 30px;
 }
 
-.container .navbar {
-    padding: 0.3em 0em;
-}
-
-.container .navbar h1 {
-    font-family: sans-serif;
-    color: #00214d;
-    text-align: center;
-}
-
-.container .main-content .add-item {
-    margin: 20px 10px 20px 10px;
-}
-
-.container .main-content .add-item input {
-    border: none;
-    margin-left: 20px;
-    font-size: 2em;
+input {
+    background-color: #55423d;
     outline: none;
-}
-
-.container .main-content .add-item input:focus {
-    border-bottom: 2px solid #00214d;
+    width: 100%;
+    margin-left: 10px;
+    border: none;
+    font-size: 32px;
 }
